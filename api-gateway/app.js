@@ -20,6 +20,9 @@ mongoose.Promise = require('bluebird')
 
 var indexRouter = require('./routes/index');
 
+//api-catalog routes
+var apiCatalog = require('./routes/api-catalog');
+
 var app = express();
 
 // view engine setup
@@ -33,6 +36,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
+app.use('api', apiCatalog);
 
 //mongoose db connection
 mongoose.connect('mongodb://admin:admin@ds121588.mlab.com:21588/mean-library', {
