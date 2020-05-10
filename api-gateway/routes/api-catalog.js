@@ -11,10 +11,10 @@
 //API routes
 var express = require('express');
 var router = express.Router();
-var auth_controller = require('../../controllers/authController');
+var auth_controller = require('../controllers/authController');
 
 //POST request for user registration
-router.post('/auth/token', auth_controller.user_register);
+router.post('/auth/register', auth_controller.user_register);
 
 //GET request to verify user tokens
 router.get('/auth/token', auth_controller.user_token);

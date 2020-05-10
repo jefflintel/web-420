@@ -8,7 +8,7 @@
 ;===========================================
 */
 
-var User = require('../api-gateway/models/user');
+var User = require('../models/user');
 
 //new user registration using POST
 exports.user_register = function(request, response) {

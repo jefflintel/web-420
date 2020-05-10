@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-app.use('api', apiCatalog);
+app.use('/api', apiCatalog);
 
 //mongoose db connection
 mongoose.connect('mongodb://admin:admin@ds121588.mlab.com:21588/mean-library', {
