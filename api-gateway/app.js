@@ -40,7 +40,8 @@ app.use('/', indexRouter);
 app.use('/api', apiCatalog);
 
 //mongoose db connection
-mongoose.connect('mongodb://admin:admin@ds121588.mlab.com:21588/mean-library', {
+
+mongoose.connect('mongodb+srv://admin:admin@buwebdev-cluster-2-becae.mongodb.net/test?retryWrites=true&w=majority', {
 promiseLibrary: require('bluebird')
 }).then ( () => console.log('connection successful'))
 .catch( (err) => console.error(err));
