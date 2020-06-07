@@ -19,4 +19,10 @@ router.post('/auth/register', auth_controller.user_register);
 //GET request to verify user tokens
 router.get('/auth/token', auth_controller.user_token);
 
+//POST request for logins
+router.post('/auth/login', auth_controller.user_login);
+
+//GET request for logouts
+router.get('/auth/logout', auth_controller.user_logout);
+
 module.exports = router;
