@@ -42,7 +42,7 @@ exports.user_register = function(request, response) {
 exports.user_token = function(request, response) {
     //response.send('NOT IMPLEMENTED: User token lookup GET');
 
-    var token = request.headers['x-access-token'];
+   /* var token = request.headers['x-access-token'];
 
     if(!token)
         return response.status(401).send({ auth: false, message: 'No token provided.' });
@@ -61,6 +61,16 @@ exports.user_token = function(request, response) {
         response.status(200).send(user);
 
         });
+    });*/
+
+    User.getById(request.userId, function(err, user) {
+        if(err)
+            return response.status(500).send('There was a problem finding the user.');
+
+        if(!user)
+            return response.status(404).send('User not found');
+
+        response.status(200).send(user);
     });
 };
 
